@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <NavBar title="TextUtils" mode = {mode} toggleMode = {toggleMode}/>
-      <div className={`container my-3 text-${mode==="dark"?"white":"dark"}`}>
+      <div className="container my-3">
         <TextForm heading="Text Convertion box" mode = {mode}/>
         {/* <AboutUs/> */}
       </div>
