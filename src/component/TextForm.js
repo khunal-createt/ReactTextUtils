@@ -55,7 +55,7 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container" style={{color: props.mode==="dark"?"light":"dark"}}>
+            <div className="container" style={{color: props.mode==="dark"?"white":"dark"}}>
                 <h4>{props.heading}</h4>
                 <div className="my-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={
@@ -75,6 +75,8 @@ export default function TextForm(props) {
             <div className= {`"container my-3 text-${props.mode==="white"?"dark":"white"}`}>
                 <h4>Your text summary</h4>
                 <p>{wordCount} words and {text.length} alphabets</p>
+                <h4>Preview</h4>
+                <p>{text.length>0?text:"Enter text in window to preview."}</p>
             </div>
         </>
     )
