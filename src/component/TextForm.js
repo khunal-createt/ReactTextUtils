@@ -5,12 +5,14 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
     const handleUpClick = () => {
         console.log("Text converted to upper case!" + text);
-        setText(text.toUpperCase())
+        setText(text.toUpperCase());
+        props.showAlert("Text converted to upper case", "success");
     }
 
     const handleLowerClick = () => {
         console.log("Text converted to Lower case!" + text);
-        setText(text.toLowerCase())
+        setText(text.toLowerCase());
+        props.showAlert("Text converted to lower case", "success");
     }
 
     const handleOnChange = (event) => {
@@ -26,8 +28,9 @@ export default function TextForm(props) {
     }
 
     const handleClearClick = () => {
-        console.log("Text cleared!");
         setText('')
+        console.log("Text cleared!");
+        props.showAlert("Text cleared!", "success");
     }
 
     const handleWordLength = () => {
@@ -37,17 +40,20 @@ export default function TextForm(props) {
 
     const handleCapitalCase = () => {
         console.log("text converted to sentence case.");
-        setText(text.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase()))
+        setText(text.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase()));
+        props.showAlert("Text converted to capital case", "success");
     }
 
     const copyToClipboard = () => {
         var copyText = document.getElementById("textBox");
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        props.showAlert("Text copied to clipboard!", "success");
     };
 
     const removeExtraSpaces = () => {
-        setText(text.split(/[ ]+/g).join(" "))
+        setText(text.split(/[ ]+/g).join(" "));
+        props.showAlert("removed extra spaces", "success");
     }
 
     const [text, setText] = useState("");
