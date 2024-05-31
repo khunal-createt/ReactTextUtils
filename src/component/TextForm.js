@@ -67,7 +67,7 @@ export default function TextForm(props) {
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={
                         {
                             backgroundColor: props.mode==="dark"?"#212529bf":"white", 
-                            color: props.mode==="white"?"dark":"white"
+                            color: props.mode==="dark"?"white":"black"
                         }
                         } id="textBox" rows="8"></textarea>
                 </div>
