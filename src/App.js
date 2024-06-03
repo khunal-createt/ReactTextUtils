@@ -19,22 +19,22 @@ function App() {
     }, 1500);
   }
 
-  const toggleMode = () => {
-    if(mode==="dark"){
-      setMode("white");
-      document.body.style.backgroundColor = "white";
-      showAlert("Dark mode has been anabled!", "success");
-    }
-    else{
+  const toggleDarkMode = () => {
+    if(mode==="white"){
       setMode("dark");
       document.body.style.backgroundColor = "#343a40";
       showAlert("Light mode has been anabled!", "success");
+    }
+    else{
+      setMode("white");
+      document.body.style.backgroundColor = "white";
+      showAlert("Dark mode has been anabled!", "success");
     }
   }
 
   return (
     <>
-      <NavBar title="TextUtils" mode = {mode} toggleMode = {toggleMode}/>
+      <NavBar title="TextUtils" mode = {mode} toggleDarkMode = {toggleDarkMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
         <TextForm showAlert={showAlert} heading="Text Convertion box" mode = {mode}/>

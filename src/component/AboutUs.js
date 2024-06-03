@@ -11,16 +11,16 @@ export default function AboutUs() {
 
     const [enableText, setEnableText] = useState("Light mode")
 
-    const toggleStyle = () => {
-        if (myStyle.color === "white") {
-            console.log("Enabling light Mode")
-            setMyStyle({ color: "black", backgroundColor: "white" })
-            setEnableText("Light mode")
-        }
-        else {
+    const toggleDarkStyle = () => {
+        if (myStyle.color === "dark") {
             console.log("Enabling dark mode")
             setMyStyle({ color: "white", backgroundColor: "black", border: "1px solid white" })
             setEnableText("Dark mode")
+        }
+        else {
+            console.log("Enabling light Mode")
+            setMyStyle({ color: "black", backgroundColor: "white" })
+            setEnableText("Light mode")
         }
     }
 
@@ -29,7 +29,7 @@ export default function AboutUs() {
             <h1 className='margin' style={{ display: 'flex' }}>About Us
                 <h5>
                 <div class="form-check form-switch my-3" style={{ marginLeft: '750px' }}>
-                    <input class="form-check-input"  type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleStyle}/>
+                    <input class="form-check-input"  type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleDarkStyle}/>
                     <label class="form-check-label"  htmlFor="flexSwitchCheckDefault">{enableText}</label>
                 </div>
                 </h5>
